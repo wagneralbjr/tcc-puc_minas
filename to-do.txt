@@ -1,0 +1,2 @@
+# distribuição dos dados  == distribuiçãod o treinamento
+# histplot, para mostrar a distribuição.
