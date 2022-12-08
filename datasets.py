@@ -27,7 +27,7 @@ def treatment_ed_basica(df):
         "QT_SALAS_UTILIZADAS",
         "QT_DESKTOP_ALUNO",
         "QT_COMP_PORTATIL_ALUNO",
-        "IN_BANDA_LARGA",
+        "IN_INTERNET",
         "TP_ATIVIDADE_COMPLEMENTAR",  # prestar atenção nesse caso, pois é 0,1,2
     ]
     # dependencia administrativa
@@ -35,6 +35,14 @@ def treatment_ed_basica(df):
     df["TP_DEPENDENCIA"] = df["TP_DEPENDENCIA"].map(
         {1: "publico", 2: "publico", 3: "publico", 4: "privado"}
     )
+    # retirando escolas com mais de 60 salas, outliers
+    df = df[df["QT_SALAS_UTILIZADAS"] <= 60]
+
+    # retirando escolas com mais de 50 desktops por aluno
+    df = df[df["QT_DESKTOP_ALUNO"] <= 50]
+
+    # retirando escola com mais de 50 computadores portáteis por aluno
+    df = df[df["QT_COMP_PORTATIL_ALUNO"] <= 50]
 
     # localizacao
     df["TP_LOCALIZACAO"] = df["TP_LOCALIZACAO"].map({1: "urbana", 2: "rural"})

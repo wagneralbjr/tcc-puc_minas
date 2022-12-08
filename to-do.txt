@@ -1,2 +1,16 @@
 # distribuição dos dados  == distribuiçãod o treinamento
 # histplot, para mostrar a distribuição.
+
+
+
+
+
+Anexar o  dicionário de dados no final do trabalho.
+Remover os registros com valores discrepantes
+em 
+QT_DESKTOP_ALUNO
+QT_COMP_PORTATIL_ALUNO
+
+
+Recalcular o indicador de internet, alterado banda larga
+para internet qualquer.
